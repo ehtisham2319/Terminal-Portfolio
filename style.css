@@ -1,0 +1,382 @@
+:root {
+  --bg-color: #1e1e1e;
+  --border-color: #00ff00;
+  --text-color: #00ff00;
+  --link-color: cyan;
+  --cursor-color: #00ff00;
+}
+
+.light-mode {
+  --border-color: #222;
+  --bg-color: #dacccc;
+  --text-color: #222;
+  --link-color: red;
+  --cursor-color: #222;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Courier New', Courier, monospace;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* terminalcss */
+
+.terminal-container {
+  padding: 1rem;
+  height: 85vh;
+  overflow-y: auto;
+  font-size: 1.2vw;
+}
+
+.terminal-line {
+  font-size: 1.2vw;
+  white-space: pre-wrap;
+  margin-bottom: 4px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  font-size: 1.2vw;
+}
+
+.terminal-input-line span {
+  font-size: 1.2vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  margin-right: 5px;
+  color: blue;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: green;
+  font-family: inherit;
+  font-size: 1.2vw;
+  width: 100%;
+}
+
+a {
+  font-size: 1.2vw;
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1vw;
+  background: var(--cursor-color);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    background: transparent;
+  }
+}
+
+/* Toggle button */
+.theme-toggle {
+  z-index: 100;
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-right: 1vw;
+  cursor: pointer;
+  font-size: 1.5vw;
+}
+
+/* main layout */
+.jumbo-container {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+}
+
+.photo-box {
+  width: 35%;
+  height: 90vh;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  border-top: 1px solid var(--border-color);
+}
+
+.terminal-box {
+  border-left: 1px solid var(--border-color);
+  width: 65%;
+  height: 90vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 9.6vh;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.titles {
+  margin-left: 1vw;
+}
+
+.title1 {
+  font-size: 1.8vw;
+  margin: 0;
+}
+
+.title2 {
+  font-size: 1vw;
+  margin: 0;
+  color: var(--link-color);
+}
+
+.links>a {
+  font-size: 2.5vw;
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.links {
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.6vw;
+  height: 10vh;
+  width: 40%;
+}
+
+.span {
+  margin-left: 0.5vw;
+  font-size: 1.2vw;
+}
+
+.email,
+.phone {
+  display: flex;
+  justify-content: center;
+}
+
+.contact>.info>.email>i,
+.contact>.info>.phone>i {
+  color: var(--link-color);
+  font-size: 1.3vw;
+}
+
+.contact {
+  width: 60%;
+  row-gap: 0.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* card css */
+.clip-icon {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2vw;
+  height: 2vw;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a5 5 0 0 0-5 5v9a3 3 0 1 1-6 0V7h2v10a1 1 0 1 0 2 0V8a3 3 0 1 1 6 0v9h2V8a5 5 0 0 0-5-5z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 4;
+}
+
+.hanger {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+
+#stripCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.card {
+  position: absolute;
+  width: 13vw;
+  height: 19vw;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-image: url("./images/copyIMG_54901.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+  cursor: grab;
+  z-index: 2;
+
+  transform-origin: top center;
+  /* rotate around the top */
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 0 2px white;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.7vw;
+  padding: 3px 6px;
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  box-shadow: 1px 1px 5px black;
+}
+
+.card:hover .tooltip {
+  opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .jumbo-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .photo-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .terminal-box {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    font-size: 7vw;
+  }
+.terminal-container,
+.terminal-line,
+.terminal-input-line ,
+.terminal-input-line span, 
+.terminal-input,a {
+  font-size: 3vw;
+}
+
+  .navbar {
+    height: auto;
+    padding: 2vw 0vw;
+  }
+
+  .titles {
+    margin-left: 2vw;
+  }
+
+  .title1 {
+    font-size: 6vw;
+  }
+
+  .title2 {
+    font-size: 3vw;
+  }
+
+  .links {
+    width: 40%;
+    height: auto;
+    border-left: none;
+    column-gap: 3vw;
+  }
+
+  .links>a {
+    font-size: 6vw;
+  }
+
+  .about {
+    height: auto;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .contact {
+    padding: 2vw 0vw;
+    border-right: 1px solid var(--border-color);
+    width: 60%;
+    height: auto;
+  }
+
+  .span {
+    margin-left: 1vw;
+    font-size: 3vw;
+  }
+
+  .contact>.info>.email>i,
+  .contact>.info>.phone>i {
+    font-size: 3.5vw;
+  }
+
+  .hanger {
+    width: 100%;
+    height: auto;
+    min-height: 40vh;
+  }
+
+  .card {
+    width: 25vw;
+    height: 35vw;
+  }
+  .clip-icon {
+  top: -14px;
+  left: 50%;
+  width: 5vw;
+  height: 5vw;
+}
+  .tooltip {
+  font-size: 2vw;
+  padding: 2px 4px;
+}
+  .theme-toggle {
+    margin-right: 2vw;
+    font-size: 4vw;
+
+  }
+}

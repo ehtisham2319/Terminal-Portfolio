@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="titles">
+      <h1 class="title1">Ehtsham Arshad</h1>
+      <h6 class="title2">Full-Stack Developer</h6>
+    </div>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </nav>
+  <div class="jumbo-container">
+    <div class="photo-box">
+      <div class="hanger">
+        <canvas id="stripCanvas"></canvas>
+        <div class="card" id="card">
+          <div class="clip-icon"></div>
+          <!-- <h6>Developer: <br><br> CH EHTSHAM</h6> -->
+          <div class="tooltip">Drag Me</div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="contact">
+          <div class="info">
+            <div class="email"><i class="ri-mail-line"></i><span class="span">chehtsham430@gmail.com</span></div>
+            <div class="phone"><i class="ri-phone-line"></i><span class="span">+92 3425440120</span></div>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://instagram.com/ch_ehtsham__" target="_blank"><i class="ri-instagram-line"></i></a>
+          <a href="https://www.linkedin.com/in/ch-ehtsham-419a4b344" target="_blank"><i
+              class="ri-linkedin-box-fill"></i></a>
+          <a href="https://github.com/ehtisham2319" target="_blank"><i class="ri-github-fill"></i></a>
+        </div>
+
+      </div>
+    </div>
+    <div class="terminal-box">
+      <div class="terminal-container" id="terminal"></div>
+
+    </div>
+  </div>
+
+
+  <audio id="typeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-typewriter-click-1121.mp3"></audio>
+  <script src="script.js"></script>
+  <script src="card.js"></script>
+</body>
+
+</html>
