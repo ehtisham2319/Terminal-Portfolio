@@ -4,6 +4,7 @@
   --text-color: #00ff00;
   --link-color: cyan;
   --cursor-color: #00ff00;
+  --input-color: green;
 }
 
 .light-mode {
@@ -12,6 +13,8 @@
   --text-color: #222;
   --link-color: red;
   --cursor-color: #222;
+  --input-color: rgb(5, 83, 5);
+
 }
 
 body {
@@ -56,7 +59,7 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  color: green;
+  color: var(--input-color);
   font-family: inherit;
   font-size: 1.2vw;
   width: 100%;

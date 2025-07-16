@@ -216,7 +216,7 @@ async function handleCommand(cmd) {
   }
   historyIndex = -1;
 
-  if (cmd === "clear") {
+  if (cmd.toLowerCase() === "clear") {
     terminal.innerHTML = "";
     return;
   }
@@ -243,7 +243,9 @@ function createInputLine() {
 
   const inputField = document.createElement("input");
   inputField.className = "terminal-input";
-  inputField.autofocus = true;
+  if (window.innerWidth > 768) {
+  inputField.focus(); // Only autofocus on desktop
+}
 
   inputLine.appendChild(prompt);
   inputLine.appendChild(inputField);
